@@ -16,7 +16,6 @@
 | [Mechanical switches](https://www.thecosmicbyte.com/product/outemu-mechanical-switches-for-swappable-keyboards-pack-of-20/?gad_source=1&gad_campaignid=916851505&gclid=CjwKCAjw56zWBhB0EiwAdPOQOdqnXad1d-0d-LyvnbUEH8SJHjgjKLp5GkDgbp6fB6kyF-VVqLSfChoC9r0QAvD_BwE) | keys | 1 | $4.12 | $4.12 | [cosmic byte](https://www.thecosmicbyte.com/product/outemu-mechanical-switches-for-swappable-keyboards-pack-of-20/?gad_source=1&gad_campaignid=916851505&gclid=CjwKCAjw56zWBhB0EiwAdPOQOdqnXad1d-0d-LyvnbUEH8SJHjgjKLp5GkDgbp6fB6kyF-VVqLSfChoC9r0QAvD_BwE) |
 | [OLED display](https://techiesms.com/product/0-96-inch-i2c-iic-4pin-128x64-oled-disp/) | displaying | 1 | $2.00 | $2.00 | [techism](https://techiesms.com/product/0-96-inch-i2c-iic-4pin-128x64-oled-disp/) |
 | [MPU6050 module](https://techiesms.com/product/mpu6050-3-axis-accelerometer-and-gyro-sensor/) | gyro | 1 | $2.00 | $2.00 | [techism](https://techiesms.com/product/mpu6050-3-axis-accelerometer-and-gyro-sensor/) |
-| Headers and hookup wire | Estimated set price | 1 | $0.00 | $0.00 | — |
 | **Parts subtotal** | — | — | — | **$14.83** | — |
 | **Tax & shipping** | — | — | — | **$0.00** | — |
 | **Total** | — | — | — | **$14.83** | — |
