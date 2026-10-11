@@ -1,52 +1,47 @@
-#include <Arduino.h>
-#include <Wire.h>
-#include <Preferences.h>
-#include <U8g2lib.h>
-#include <DHT.h>
-#include <Adafruit_NeoPixel.h>
+#include<Arduino.h>
+#include<Wire.h>
+#include<Preferences.h>
+#include<U8g2lib.h>
+#include<DHT.h>
+#include<Adafruit_NeoPixel.h>
 
-#define OLED_SDA        6       // XIAO D5
-#define OLED_SCL        7       // XIAO D4
+#define OLED_SDA 6
+#define OLED_SCL 7
 
-#define DHT_PIN         3       // XIAO D1
-#define DHT_TYPE        DHT11
-
-#define BUTTON_FEED     4       // XIAO D2
-#define BUTTON_PLAY     5       // XIAO D3
-
-#define LED_PIN         21      // XIAO D6
-#define LED_COUNT       3
+#define DHT_PIN 3
+#define DHT_TYPE DHT11
+#define BUTTON_FEED 4
+#define BUTTON_PLAY 5
+#define LED_PIN 21
+#define LED_COUNT 3
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C oled(
     U8G2_R0,
     U8X8_PIN_NONE
 );
-
-DHT dht(DHT_PIN, DHT_TYPE);
-
-Adafruit_NeoPixel leds(
+DHT dht(DHT_PIN,DHT_TYPE);
+Adafruit_Neopixel led{
     LED_COUNT,
     LED_PIN,
-    NEO_GRB + NEO_KHZ800
-);
+    LED_GRB + NEO_KHZ800
+}
 
 Preferences prefs;
-
 #define MPU6050_ADDR 0x68
 
-int16_t ax, ay, az;
-int16_t gx, gy, gz;
+int16_t ax,ay,az;
+int16_t gx,gy,gz;
 
-float acceleration = 0;
+float acceleration =0;
 
-struct PetData {
+struct  PetData
+{
     int hunger;
     int happiness;
     int energy;
     int health;
 
     unsigned long ageSeconds;
-
     bool alive;
 };
 
@@ -56,278 +51,214 @@ unsigned long lastTick = 0;
 unsigned long lastDisplay = 0;
 unsigned long lastSensorRead = 0;
 unsigned long lastMotionRead = 0;
-
-unsigned long lastFeed = 0;
+unsigned long lastFeed =0;
 unsigned long lastPlay = 0;
 
 const unsigned long GAME_TICK = 10000;
 const unsigned long DISPLAY_TICK = 150;
-const unsigned long SENSOR_TICK = 2500;
+const unsigned long SENSOR_TICK= 2500;
 const unsigned long MOTION_TICK = 100;
-
 
 bool previousFeed = HIGH;
 bool previousPlay = HIGH;
 
-enum PetExpression {
+enum PetExpression{
     HAPPY,
     NORMAL,
     SAD,
     SLEEPING,
     DEAD
 };
-
 PetExpression expression = NORMAL;
-
 int animationFrame = 0;
 
-
-enum Screen {
+enum Screen{
     MAIN_SCREEN,
     STATUS_SCREEN,
     SENSOR_SCREEN
-};
+}
 
 Screen currentScreen = MAIN_SCREEN;
 
-
-void initMPU6050() {
+bool initMPU6050(){
     Wire.beginTransmission(MPU6050_ADDR);
     Wire.write(0x6B);
     Wire.write(0x00);
     Wire.endTransmission();
-
-    // Accelerometer ±2g
     Wire.beginTransmission(MPU6050_ADDR);
     Wire.write(0x1C);
     Wire.write(0x00);
     Wire.endTransmission();
-
-    // Gyroscope ±250°/s
     Wire.beginTransmission(MPU6050_ADDR);
     Wire.write(0x1B);
     Wire.write(0x00);
     Wire.endTransmission();
 }
-
-
-bool readMPU6050() {
+bool readMPU6050(){
     Wire.beginTransmission(MPU6050_ADDR);
     Wire.write(0x3B);
 
-    if (Wire.endTransmission(false) != 0)
+    if(Wire.endTransmission(false)!=0)
         return false;
-
-    if (Wire.requestFrom(MPU6050_ADDR, 14) != 14)
+    if(Wire.requestFrom(MPU6050_ADDR,14)!=14)
         return false;
+    ax = Wire.read()<< 8|Wire.read();
+    ay = Wire.read()<< 8|Wire.read();
+    az = Wire.read()<< 8|Wire.read();
 
-    ax = Wire.read() << 8 | Wire.read();
-    ay = Wire.read() << 8 | Wire.read();
-    az = Wire.read() << 8 | Wire.read();
-
-    // Temperature
     Wire.read();
     Wire.read();
 
-    gx = Wire.read() << 8 | Wire.read();
-    gy = Wire.read() << 8 | Wire.read();
-    gz = Wire.read() << 8 | Wire.read();
+    gx =Wire.read()<<8|Wire.read();
+    gy= Wire.read()<<8|Wire.read();
+    gz = Wire.read()<<8|Wire.read();
 
-    float x = ax / 16384.0;
-    float y = ay / 16384.0;
-    float z = az / 16384.0;
+    float x=ax/16384.0;
+    float y=ay/16384.0;
+    float z=az/16384.0;
 
     acceleration = sqrt(
-        x * x +
-        y * y +
-        z * z
+        x*x +
+        y*y +
+        z*z
     );
-
     return true;
 }
+void loadPet(){
+    prefs.begin("tomagotchi",false);
 
+    pet.hunger = prefs.getInt("hunger",70);
+    pet.happiness=prefs.getInt("happy",70);
+    pet.energy=prefs.getInt("energy",80);
+    pet.health=prefs.getInt("health",100);
 
-void loadPet() {
-    prefs.begin("tamagotchi", false);
+    pet.ageSeconds = prefs.getULong("age",0);
+    pet.alive = prefs.getBool("alive",true);
+}
+void savePet(){
+    prefs.putInt("hunger",pet.hunger);
+    prefs.putInt("happy",pet.happiness);
+    prefs.putInt("energy",pet.health);
+    prefs.putInt("health",pet.health);
 
-    pet.hunger = prefs.getInt("hunger", 70);
-    pet.happiness = prefs.getInt("happy", 70);
-    pet.energy = prefs.getInt("energy", 80);
-    pet.health = prefs.getInt("health", 100);
-
-    pet.ageSeconds = prefs.getULong("age", 0);
-    pet.alive = prefs.getBool("alive", true);
+    prefs.putULong("age",pet.ageSeconds);
+    prefs.putBool("alive",pet.alive);
+}
+void clampStats(){
+    pet.hunger = constrain(pet.hunger,0,100);
+    pet.happiness = constrain(pet.happiness,0,100);
+    pet.energy = constrain(pet.energy,0,100);
+    pet.health = constrain(pet.health,0,100);
 }
 
-void savePet() {
-    prefs.putInt("hunger", pet.hunger);
-    prefs.putInt("happy", pet.happiness);
-    prefs.putInt("energy", pet.energy);
-    prefs.putInt("health", pet.health);
-
-    prefs.putULong("age", pet.ageSeconds);
-    prefs.putBool("alive", pet.alive);
-}
-
-void clampStats() {
-    pet.hunger = constrain(pet.hunger, 0, 100);
-    pet.happiness = constrain(pet.happiness, 0, 100);
-    pet.energy = constrain(pet.energy, 0, 100);
-    pet.health = constrain(pet.health, 0, 100);
-}
-
-void updateExpression() {
-
-    if (!pet.alive) {
+void updateExpression(){
+    if(!pet.alive){
         expression = DEAD;
         return;
     }
-
-    if (pet.energy < 15) {
+    if(pet.energy<15){
         expression = SLEEPING;
         return;
     }
-
-    if (pet.hunger < 20 || pet.happiness < 20) {
+    if(pet.hunger<20||pet.happiness<20){
         expression = SAD;
         return;
     }
-
-    if (pet.happiness > 75) {
+    if(pet.happiness>75){
         expression = HAPPY;
         return;
     }
-
     expression = NORMAL;
+
 }
 
-void updateGame() {
-
-    if (!pet.alive)
-        return;
-
-    pet.ageSeconds += GAME_TICK / 1000;
-
+void updateGame(){
+    if(!pet.alive)
+    return;
+    pet.ageSeconds+=GAME_TICK/1000;
     pet.hunger -= 1;
-
     pet.happiness -= 1;
+    pet.energy -=1;
 
-    pet.energy -= 1;
-
-    if (pet.hunger < 15) {
-        pet.health -= 2;
+    if(pet.hunger<15){
+        pet.health -=2;
     }
-
-    if (pet.happiness < 10) {
-        pet.health -= 1;
+    if(pet.happiness<10){
+        pet.health -=1;
     }
-
-    if (pet.energy < 5) {
-        pet.health -= 1;
+    if(pet.energy<5){
+        pet.health -=1;
     }
-
     clampStats();
 
-    if (pet.health <= 0) {
+    if(pet.health <=0){
         pet.health = 0;
         pet.alive = false;
     }
-
     updateExpression();
-
     savePet();
 }
+void feedPet(){
+    if(!pet.alive)
+    return;
+    pet.hunger +=20;
+    pet.happiness +=3;
+    if(pet.hunger > 100)
+    pet.hunger = 100;
 
-void feedPet() {
+    if(pet.happiness>100)
+    pet.happiness=100;
 
-    if (!pet.alive)
-        return;
-
-    pet.hunger += 20;
-    pet.happiness += 3;
-
-    if (pet.hunger > 100)
-        pet.hunger = 100;
-
-    if (pet.happiness > 100)
-        pet.happiness = 100;
-
-    lastFeed = millis();
-
+    lastFeed=millis();
     savePet();
 }
+void playWithPet(){
+    if(!pet.alive)
+    return;
+    if(pet,energy <10)
+    return;
 
+    pet.happiness+=20;
+    pet.energy-=10;
+    pet.hunger-=5;
 
-void playWithPet() {
-
-    if (!pet.alive)
-        return;
-
-    if (pet.energy < 10)
-        return;
-
-    pet.happiness += 20;
-    pet.energy -= 10;
-    pet.hunger -= 5;
-
-    pet.happiness = constrain(pet.happiness, 0, 100);
-    pet.hunger = constrain(pet.hunger, 0, 100);
-    pet.energy = constrain(pet.energy, 0, 100);
-
+    pet.happiness = constrain(pet.happiness,0,100);
+    pet.hunger = constrain(pet.hunger,0,100);
+    pet.energy = constrain(pet.energy,0,100);
     lastPlay = millis();
-
     savePet();
 }
+void checkMotion(){
+    if(!pet.alive)
+    return;
+    if(!readMPU6050())
+    return
 
-
-void checkMotion() {
-
-    if (!pet.alive)
-        return;
-
-    if (!readMPU6050())
-        return;
-
-    // Detect movement
-    if (acceleration > 1.35 || acceleration < 0.65) {
-
-        pet.happiness += 3;
-        pet.energy -= 1;
-
-        pet.happiness = constrain(
+    if(acceleration >1.35||acceleration<0.65){
+        pet.happiness+=3;
+        pet.energy -=1;
+        pet.happeness= constrain(
             pet.happiness,
-            0,
-            100
-        );
-
+            0,100
+        )
         pet.energy = constrain(
             pet.energy,
             0,
             100
-        );
-
+        )
         expression = HAPPY;
     }
 }
 
-
-void handleButtons() {
-
+void handleButtons(){
     bool feedState = digitalRead(BUTTON_FEED);
-    bool playState = digitalRead(BUTTON_PLAY);
-
-    if (previousFeed == HIGH && feedState == LOW) {
+    bool playState = digitalState(BUTTON_PLAY);
+    if(previousFeed == HIGH && feedState == LOW){
         feedPet();
     }
-
-    if (previousPlay == HIGH && playState == LOW) {
-        playWithPet();
-    }
-
     previousFeed = feedState;
     previousPlay = playState;
 }
-
 void drawPet() {
 
 
@@ -385,285 +316,207 @@ void drawPet() {
         oled.drawLine(61, 41, 67, 41);
     }
 }
-
 void drawBar(
     int x,
     int y,
     int width,
     int height,
     int value
-) {
-
+){
     oled.drawFrame(
         x,
         y,
         width,
         height
     );
-
     int fill = map(
         value,
         0,
         100,
         0,
-        width - 2
+        width -2
     );
-
     oled.drawBox(
-        x + 1,
-        y + 1,
+        x+1,
+        y+1,
         fill,
-        height - 2
+        height -2
     );
 }
-
-
-void drawMainScreen() {
-
+void drawMainScreen(){
     oled.clearBuffer();
-
     oled.setFont(u8g2_font_5x7_tf);
-
     oled.drawStr(
         2,
         7,
         "TAMAGOTCHI"
     );
-
     oled.drawStr(
         105,
         7,
-        pet.alive ? "OK" : "RIP"
+        pet.alive?"OK":"RIP"
     );
-
-
     drawPet();
 
-
     oled.setFont(u8g2_font_4x6_tf);
-
-    oled.drawStr(2, 50, "FOOD");
-    drawBar(22, 45, 32, 6, pet.hunger);
-
-    oled.drawStr(2, 61, "HAP");
-    drawBar(22, 56, 32, 6, pet.happiness);
-
-    oled.drawStr(68, 50, "ENG");
-    drawBar(88, 45, 36, 6, pet.energy);
-
-    oled.drawStr(68, 61, "HP");
-    drawBar(88, 56, 36, 6, pet.health);
-
+    oled.drawStr(2,50,"FOOD");
+    drawBar(22,56,32,6,pet.happiness);
+    oled.drawStr(2,61,"HAP");
+    drawBar(22,56,32,6,pet.happiness);
+    oled.drawStr(68,50,"ENG");
+    drawBar(88,45,36,6,pet.energy);
+    oled.drawStr(68,61 "HP");
+    drawBar(88,56,36,6,pet.health);
     oled.sendBuffer();
+
 }
-
-
-void drawStatusScreen() {
-
+void drawStatusScreen(){
     oled.clearBuffer();
-
     oled.setFont(u8g2_font_6x10_tf);
-
     oled.drawStr(
         2,
         10,
         "PET STATUS"
     );
-
     oled.setFont(u8g2_font_5x7_tf);
-
     char buffer[32];
-
-    snprintf(
+    snprint(
         buffer,
         sizeof(buffer),
-        "Food: %d%%",
+        "Food:%d%%",
         pet.hunger
     );
-
-    oled.drawStr(2, 23, buffer);
-
+    oled.drawStr(,23,buffer);
     snprintf(
         buffer,
         sizeof(buffer),
-        "Happy: %d%%",
+        "Happy:%d%%",
         pet.happiness
     );
-
-    oled.drawStr(2, 33, buffer);
-
-    snprintf(
+    oled.drawStr(2,33,buffer);
+    snprint(
         buffer,
         sizeof(buffer),
-        "Energy: %d%%",
+        "Energy:%d%%",
         pet.energy
     );
-
-    oled.drawStr(2, 43, buffer);
-
+    oled.drawStr(2,43,buffer);
     snprintf(
         buffer,
         sizeof(buffer),
         "Health: %d%%",
         pet.health
-    );
-
-    oled.drawStr(2, 53, buffer);
-
-    unsigned long ageHours =
-        pet.ageSeconds / 3600;
-
+    )
+    oled.drawStr(2,53,buffer);
+    unsigned long ageHours = pet.ageSeconds/3600;
     snprintf(
         buffer,
         sizeof(buffer),
         "Age: %luh",
         ageHours
     );
-
-    oled.drawStr(75, 23, buffer);
-
-    oled.drawStr(
-        75,
-        53,
-        "D2:D3"
-    );
-
+    oled.drawStr(75,23,buffer);
+    oled.drawStr(75,53,"D2:D3");
     oled.sendBuffer();
+
 }
-
-
-void drawSensorScreen() {
-
-    float temperature = dht.readTemperature();
-    float humidity = dht.readHumidity();
-
+void drawSensorScreen(){
+    float temperature =dht.readTemperature();
+    float humidity= dht.readHumidity();
+    
     oled.clearBuffer();
-
     oled.setFont(u8g2_font_6x10_tf);
-
     oled.drawStr(
         2,
         10,
         "SENSORS"
     );
-
     oled.setFont(u8g2_font_5x7_tf);
 
     char buffer[32];
-
-    if (!isnan(temperature)) {
-
+    if(!isnan(temperature)){
         snprintf(
             buffer,
             sizeof(buffer),
-            "TEMP: %.1f C",
+            "TEMP:%.1f C",
             temperature
         );
-
-        oled.drawStr(2, 25, buffer);
+        oled.drawStr(2,25,buffer);
     }
-
-    if (!isnan(humidity)) {
-
+    if(!isnan(humidity)){
         snprintf(
             buffer,
             sizeof(buffer),
             "HUM : %.1f %%",
             humidity
         );
-
-        oled.drawStr(2, 36, buffer);
+        oled.drawStr(2,36,buffer);
     }
-
     snprintf(
         buffer,
         sizeof(buffer),
-        "ACC : %.2f g",
+        "ACC:%.2f g",
         acceleration
+    )
+    oled.drawStr(
+        2,
+        47,
+        buffer
     );
-
-    oled.drawStr(2, 47, buffer);
-
     oled.drawStr(
         2,
         59,
         "MPU6050 + DHT11"
     );
-
     oled.sendBuffer();
 }
-
-void updateLEDs() {
-
-    if (!pet.alive) {
-
-        for (int i = 0; i < LED_COUNT; i++)
-            leds.setPixelColor(
-                i,
-                leds.Color(50, 0, 0)
-            );
-
-        leds.show();
+void updateLEDs(){
+    if(!pet.alive){
+        for(int i =0;i<LED_COUNT;i++)
+        leds.setPixelColor(1,leds.Color(50, 0, 0));
+        led.show();
         return;
     }
-
-    if (pet.hunger < 20) {
-
-        for (int i = 0; i < LED_COUNT; i++)
+    if(pet.hunger<20){
+        for(int i=0;i<LED_COUNT;i++)
             leds.setPixelColor(
                 i,
-                leds.Color(50, 20, 0)
+                leds.Color(50,20,0)
             );
-
-    } else if (pet.happiness > 75) {
-
-        for (int i = 0; i < LED_COUNT; i++)
-            leds.setPixelColor(
-                i,
-                leds.Color(0, 50, 10)
-            );
-
-    } else {
-
-        for (int i = 0; i < LED_COUNT; i++)
-            leds.setPixelColor(
-                i,
-                leds.Color(0, 10, 50)
-            );
+    }else if(pet.happiness>75){
+        for(int i =0;i<LED_COUNT;i++)
+        leds.setPixelColor(
+            i,
+            leds.Color(0,50,10)
+        );
+    }else{
+        for(int i = 0;i<LED_COUNT;i++)
+        leds.setPixelColor(
+            i,
+            leds.Color(0,10,50)
+        );
     }
-
     leds.show();
 }
 
-void printDebug() {
-
+void printDebug(){
     Serial.println();
-    Serial.println("===== TAMAGOTCHI =====");
-
+    Serial.println("=====TAMAGOTCHI=====");
     Serial.print("Hunger: ");
-    Serial.println(pet.hunger);
-
-    Serial.print("Happiness: ");
+    serial.println(pet.hunger);
+    serial.print("Happiness: ");
     Serial.println(pet.happiness);
-
     Serial.print("Energy: ");
     Serial.println(pet.energy);
-
     Serial.print("Health: ");
     Serial.println(pet.health);
-
     Serial.print("Acceleration: ");
     Serial.println(acceleration);
-
     Serial.print("Alive: ");
     Serial.println(pet.alive);
-
-    Serial.println("======================");
+    Serial.println("========================")
 }
-
-
-void setup() {
-
+void setup(){
     Serial.begin(115200);
 
     delay(500);
@@ -733,10 +586,7 @@ void setup() {
 
     printDebug();
 }
-
-
-void loop() {
-
+void loop(){
     unsigned long now = millis();
 
     // Buttons
