@@ -16,7 +16,6 @@
 | [Mechanical switches](https://www.thecosmicbyte.com/product/outemu-mechanical-switches-for-swappable-keyboards-pack-of-20/?gad_source=1&gad_campaignid=916851505&gclid=CjwKCAjw56zWBhB0EiwAdPOQOdqnXad1d-0d-LyvnbUEH8SJHjgjKLp5GkDgbp6fB6kyF-VVqLSfChoC9r0QAvD_BwE) | keys | 1 | $4.12 | $4.12 | [cosmic byte](https://www.thecosmicbyte.com/product/outemu-mechanical-switches-for-swappable-keyboards-pack-of-20/?gad_source=1&gad_campaignid=916851505&gclid=CjwKCAjw56zWBhB0EiwAdPOQOdqnXad1d-0d-LyvnbUEH8SJHjgjKLp5GkDgbp6fB6kyF-VVqLSfChoC9r0QAvD_BwE) |
 | OLED display | Verify I2C interface | 1 | $0.00 | $0.00 | — |
 | MPU6050 module | Estimated price | 1 | $0.00 | $0.00 | — |
-| Hot-swap sockets | Optional; verify footprint compatibility | 6 | $0.00 | $0.00 | — |
 | Headers and hookup wire | Estimated set price | 1 | $0.00 | $0.00 | — |
 | **Parts subtotal** | — | — | — | **$10.83** | — |
 | **Tax & shipping** | — | — | — | **$0.00** | — |
