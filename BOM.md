@@ -17,7 +17,7 @@
 | [OLED display](https://techiesms.com/product/0-96-inch-i2c-iic-4pin-128x64-oled-disp/) | displaying | 1 | $2.00 | $2.00 | [techism](https://techiesms.com/product/0-96-inch-i2c-iic-4pin-128x64-oled-disp/) |
 | [MPU6050 module](https://techiesms.com/product/mpu6050-3-axis-accelerometer-and-gyro-sensor/) | gyro | 1 | $2.00 | $2.00 | [techism](https://techiesms.com/product/mpu6050-3-axis-accelerometer-and-gyro-sensor/) |
 | **Parts subtotal** | — | — | — | **$14.83** | — |
-| **Tax & shipping** | — | — | — | **$0.00** | — |
-| **Total** | — | — | — | **$14.83** | — |
+| **Tax & shipping** | — | — | — | **$5.00** | — |
+| **Total** | — | — | — | **$19.83** | — |
 
-$15.17 left of the tier's funding.
+$10.17 left of the tier's funding.
