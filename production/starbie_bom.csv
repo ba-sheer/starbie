@@ -1,4 +1,5 @@
 ﻿Designator,Footprint,Quantity,Value,LCSC Part #
+BZ1,Buzzer_12x9.5RM7.6,1,Buzzer,
 "D1, D2, D3",LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm,3,WS2812B,
 J1,PinHeader_1x08_P2.54mm_Vertical,1,Conn_01x08_Pin,
 J2,Display_128x64_096_I2C,1,Conn_01x04_Pin,
