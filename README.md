@@ -1,9 +1,20 @@
 # starbie
 this is my project for week 1 of halflife ysws.my goal is to build a keychain tamagotchi based on guide provided by hc
 
-<img width="1043" height="478" alt="image" src="https://github.com/user-attachments/assets/a808ab20-aa14-4d60-b7a0-94ae056f4e25" />
-<img width="1255" height="643" alt="image" src="https://github.com/user-attachments/assets/29587065-46cd-4978-9c41-bb7a457bb1a0" />
+this is the link of half life project page https://halflife.hackclub.com/projects/cmuyamfi1004z01qvesjx09nr
 
+this project is basicly a tamagothchi i am planning to use as my backpacks key chain and It is week 1 of learning the hardware series
+
+fully funded by hackclub
+
+<img width="982" height="531" alt="image" src="https://github.com/user-attachments/assets/3ba23c93-5a16-408c-b6ab-3b3368451368" />
+
+<img width="1077" height="592" alt="Screenshot 2026-10-12 224442" src="https://github.com/user-attachments/assets/6acbe483-669f-43f7-861f-5852875b64e0" />
+<img width="1132" height="647" alt="Screenshot 2026-10-12 224349" src="https://github.com/user-attachments/assets/826b3aea-b0a3-476e-b10b-26d8537f2826" />
+<img width="1270" height="652" alt="Screenshot 2026-10-12 224324" src="https://github.com/user-attachments/assets/6f82455e-3d2d-49c8-989c-d6ba425b9b09" />
+<img width="1050" height="623" alt="Screenshot 2026-10-12 224501" src="https://github.com/user-attachments/assets/c20d8edc-a5fa-4f4c-9874-b131136f5763" />
+
+# COMPONENTS
 
 | Component | Quantity |
 |---|---:|
@@ -34,3 +45,4 @@ I²C Addresses
 OLED      0x3C
 MPU6050   0x68
 ```
+thanks to hack club and zach latta
