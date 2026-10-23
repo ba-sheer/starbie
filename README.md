@@ -14,6 +14,24 @@ fully funded by hackclub
 <img width="1270" height="652" alt="Screenshot 2026-10-12 224324" src="https://github.com/user-attachments/assets/6f82455e-3d2d-49c8-989c-d6ba425b9b09" />
 <img width="1050" height="623" alt="Screenshot 2026-10-12 224501" src="https://github.com/user-attachments/assets/c20d8edc-a5fa-4f4c-9874-b131136f5763" />
 
+
+## Controls
+
+| Input | Action |
+|---|---|
+| Feed button  | Feed the pet |
+| Play button | Play with the pet |
+| Shake device | Interact with the pet |
+
+## LED Indicators
+
+| Color | Status |
+|---|---|
+| Red | Pet is dead |
+| Orange | Low hunger |
+| Green | High happiness |
+| Blue | Normal |
+
 # COMPONENTS
 
 | Component | Quantity |
