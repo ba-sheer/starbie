@@ -19,7 +19,7 @@
 3. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
 4. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ad](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
 5. [2026-10-11: added  readme](#2026-10-11-added-readme)
-6. [2026-10-23: refined the pcb to be the final version of  my starbie version](#2026-10-23-refined-the-pcb-to-be-the-final-version-of-my-sta)
+6. [2026-10-23: I developed the initial version of Starbie based on my own ideas and vision for the project. After reviewing the provided guide, I refined the PCB design and incorporated several improvements to make](#2026-10-23-i-developed-the-initial-version-of-starbie-based-)
 
 ## Design
 
@@ -85,10 +85,14 @@ and also added rendered images from past timelapses in readme and double check a
 
 ![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/0434965203c80c4f46e006be693aa261b51ecadd1c68368b5086f671ca85c059.png)
 
-### 2026-10-23: refined the pcb to be the final version of  my starbie version
+### 2026-10-23: I developed the initial version of Starbie based on my own ideas and vision for the project. After reviewing the provided guide, I refined the PCB design and incorporated several improvements to make
 
 **1.02h**
 
-refined the pcb to be the final version of  my starbie version
+I developed the initial version of Starbie based on my own ideas and vision for the project. After reviewing the provided guide, I refined the PCB design and incorporated several improvements to make it more functional and polished. I added LEDs and silkscreen markings to improve visual appeal and component identification. I also included a buzzer as my own addition beyond the guide's recommendations, expanding the board's functionality. To test the design before moving forward with the physical build, I simulated the circuit online and used the results to evaluate the initial design. Based on these improvements, I refined the PCB layout and finalized my version of Starbie. This final version combines the guide's recommendations with my own modifications, resulting in a design that reflects both the project's original concept and my individual contributions.
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/2a50886a15b8efb51a0357ee478e71c2c9345ddf19a6f8c7c08c53f1484f7ec3.png)
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/8808f78d16f2f5610577f432caa442c353433784e7541ca6fbe97ea766f74852.png)
 
 [Timelapse](https://lookout.hackclub.com/api/media/bbe1f6d2-cb02-4956-9719-4c39aa13c5a0/video.mp4)
