@@ -1,7 +1,0 @@
-Reference,Component,Specification,Quantity,Unit_Price_INR,Total_INR,Website,Notes
-U1,XIAO ESP32-C3,Seeed XIAO ESP32-C3 development board,1,468,468,https://techiesms.com/,Price unverified; confirm exact model
-SW1-SW6,Mechanical switches,Cosmic Byte Cherry MX compatible pack of 10,1,449,449,https://www.thecosmicbyte.com/product-category/gamingkeyboards/keyboard-mechanical-switches/,Pack price; 10 switches included
-OLED1,OLED display,128x64 I2C SSD1306 0.96 inch,1,237,237,https://robu.in/,Verify I2C interface
-U2,MPU6050 module,6-axis accelerometer and gyroscope I2C,1,150,150,https://robu.in/,Estimated price
-HS1-HS6,Hot-swap sockets,MX compatible,6,10,60,https://stackskb.com/,Optional; verify footprint compatibility
-J1,Headers and hookup wire,2.54mm headers and jumper wires,1,45,45,https://robu.in/,Estimated set price
