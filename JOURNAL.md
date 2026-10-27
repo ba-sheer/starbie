@@ -17,7 +17,7 @@
 1. [2026-10-10: I developed the initial version of Starbie based on my own ideas and vision for the project. This draft establishes the core concept, structure, and direction I want to pursue. While it is still in it](#2026-10-10-i-developed-the-initial-version-of-starbie-based-)
 2. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
 3. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
-4. [2026-10-11: Added buzzer as my addition of the guide](#2026-10-11-added-buzzer-as-my-addition-of-the-guide)
+4. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ad](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
 5. [2026-10-11: added  readme](#2026-10-11-added-readme)
 6. [2026-10-23: refined the pcb to be the final version of  my starbie version](#2026-10-23-refined-the-pcb-to-be-the-final-version-of-my-sta)
 
@@ -59,11 +59,15 @@ I developed the initial version of Starbie based on my own ideas and vision for 
 
 [Timelapse](https://lookout.hackclub.com/api/media/59dbd143-c0c8-46d6-b872-c10b54f619db/video.mp4)
 
-### 2026-10-11: Added buzzer as my addition of the guide
+### 2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ad
 
 **0.45h**
 
-Added buzzer as my addition of the guide
+I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I added LEDs and silkscreen markings to the PCB to improve component identification, usability, and overall appearance. I also simulated the design online for testing purposes to evaluate the circuit and identify potential issues before proceeding with the physical build. In addition to the components recommended in the guide, I incorporated a buzzer as my own addition to expand the board's functionality. This modification reflects my effort to go beyond the basic requirements and explore further improvements. I will continue refining the PCB by following the guide, testing the design, and making adjustments where necessary. My goal is to turn Starbie into a well-designed, functional, and reliable project while retaining my own ideas and contributions.
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/311451903786d018b5690d7b9267c50d95dfa7a03232ffbfa8fc2439cdca71fc.png)
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/0cb79e77bd7f7deb4a661aab243474b2d3e04775f7ac7a28b815b870b203f0fb.png)
 
 [Timelapse](https://lookout.hackclub.com/api/media/b4c80748-4af6-47b6-bccb-b77d532a2f73/video.mp4)
 
