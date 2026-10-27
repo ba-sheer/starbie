@@ -14,7 +14,7 @@
 
 ## Contents
 
-1. [2026-10-10: drafted a initial version of starbie from my mind this is prerefined version by following the guide](#2026-10-10-drafted-a-initial-version-of-starbie-from-my-mind)
+1. [2026-10-10: I developed the initial version of Starbie based on my own ideas and vision for the project. This draft establishes the core concept, structure, and direction I want to pursue. While it is still in it](#2026-10-10-i-developed-the-initial-version-of-starbie-based-)
 2. [2026-10-11: added leds and silkscreens for pcb](#2026-10-11-added-leds-and-silkscreens-for-pcb)
 3. [2026-10-11: simulated online for testing purpose](#2026-10-11-simulated-online-for-testing-purpose)
 4. [2026-10-11: Added buzzer as my addition of the guide](#2026-10-11-added-buzzer-as-my-addition-of-the-guide)
@@ -23,11 +23,15 @@
 
 ## Design
 
-### 2026-10-10: drafted a initial version of starbie from my mind this is prerefined version by following the guide
+### 2026-10-10: I developed the initial version of Starbie based on my own ideas and vision for the project. This draft establishes the core concept, structure, and direction I want to pursue. While it is still in it
 
 **1.23h**
 
-drafted a initial version of starbie from my mind this is prerefined version by following the guide
+I developed the initial version of Starbie based on my own ideas and vision for the project. This draft establishes the core concept, structure, and direction I want to pursue. While it is still in its early stages, it provides a solid foundation for further development. I will refine the design and implementation by following the provided guide and applying its recommendations. The focus will be on improving functionality, consistency, usability, and overall quality without losing the original vision behind Starbie. With these improvements, I aim to turn the initial concept into a more polished, reliable, and complete project.
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/edc91f5a836e8bf897bbb1e954a6a445c72320a7a2ca17efc5da8eda95cee110.png)
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/3ddcce52089715e54e4d9b7fe6a86ae2255618624d1ee17521624a0e1771ad44.png)
 
 [Timelapse](https://lookout.hackclub.com/api/media/1f2835e0-6eb2-4f1c-8163-17994b66f792/video.mp4)
 
