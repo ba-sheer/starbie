@@ -11,6 +11,22 @@ this project is basicly a tamagothchi i am planning to use as my backpacks key c
 
 fully funded by hackclub
 
+# bom
+
+| Item                     | Qty | Supplier      | Cost/item | Total Cost | link                                                                                                                       |
+|--------------------------|-----|---------------|-----------|------------|----------------------------------------------------------------------------------------------------------------------------|
+| XIAO ESP32-C3            | 1   | techism       | $6.00     | $6.00      | https://techiesms.com/product/seeed-studio-xiao-esp32c3/?srsltid=AU7gw4X0ypi5G6QPsjTj6_fCxW_KTHcVgSjSWs9jFoDQ4cQplrFg8Iaqx |
+| Mechanical switches      | 1   | cosmic byte   | $4.12     | $4.12      | https://www.thecosmicbyte.com/product/outemu-mechanical-switches-for-swappable-keyboards-pack-of-20/                       |
+| OLED display             | 1   | techism       | $2.00     | $2.00      | https://techiesms.com/product/0-96-inch-i2c-iic-4pin-128x64-oled-disp/                                                     |
+| MPU6050 module           | 1   | techism       | $2.00     | $2.00      | https://techiesms.com/product/mpu6050-3-axis-accelerometer-and-gyro-sensor/                                                |
+| dht11                    | 1   | robocraze     | $0.70     | $0.70      | https://robocraze.com/products/dht11-humidity-and-temperature-sensor                                                       |
+| passive buzzer           | 1   | quartz        | $0.70     | $0.70      | https://quartzcomponents.com/products/piezo-buzzer                                                                         |
+| pcb                      | 1   | jlcpcb        | $9.00     | $9.00      | https://jlcpcb.com                                                                                                         |
+| key and switches         | 1   | unknown       | $0.00     | $0.00      | https://meckeys.com/shop/accessories/keyboard-accessories/key-switches/gateron-5-pin-switch-tester-pack/                   |
+| resistor                 | 1   | already owned | $0.00     | $0.00      | https://www.amazon.in/DEPOKE-Value-Resistor-Pack-320pcs/dp/B0CGY55MDP/                                                     |
+| leds                     | 1   | robocraze     | $0.30     | $0.30      | https://robocraze.com/products/ws2812-8-bit-rgb-led-straight                                                               |
+| Estimated total shipping | 1   |               | $4.00     | $4.00      |                                                                                                                            |
+| TOTAL                    |     |               |           | $28.82     |                                                                                                                            |
 
 ## Controls
 
