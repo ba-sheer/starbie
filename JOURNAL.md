@@ -16,7 +16,7 @@
 
 1. [2026-10-10: I developed the initial version of Starbie based on my own ideas and vision for the project. This draft establishes the core concept, structure, and direction I want to pursue. While it is still in it](#2026-10-10-i-developed-the-initial-version-of-starbie-based-)
 2. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
-3. [2026-10-11: simulated online for testing purpose](#2026-10-11-simulated-online-for-testing-purpose)
+3. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
 4. [2026-10-11: Added buzzer as my addition of the guide](#2026-10-11-added-buzzer-as-my-addition-of-the-guide)
 5. [2026-10-11: added  readme](#2026-10-11-added-readme)
 6. [2026-10-23: refined the pcb to be the final version of  my starbie version](#2026-10-23-refined-the-pcb-to-be-the-final-version-of-my-sta)
@@ -47,11 +47,15 @@ I developed the initial version of Starbie based on my own ideas and vision for 
 
 [Timelapse](https://lookout.hackclub.com/api/media/66aaa5e4-1b79-49c4-955e-39e89d15beb2/video.mp4)
 
-### 2026-10-11: simulated online for testing purpose
+### 2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha
 
 **0.28h**
 
-simulated online for testing purpose
+I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I have added LEDs and silkscreen markings to the PCB to improve component identification, usability, and overall appearance. I also simulated the design online for testing purposes to evaluate the circuit and identify potential issues before moving forward with the physical build. This allows me to validate the initial design and make necessary adjustments early in the development process. I will continue refining the PCB by following the provided guide and incorporating its recommendations. My goal is to preserve Starbie's original concept while improving its functionality, reliability, and overall build quality.
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/d15064249ed712128437e65fd3e9db737fc57a1a035e0a3040a0a881760abcd1.png)
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/e0889737002b9c88a9ac6d24d9f37f7f03600eddcf339931c069f72255fdb87a.png)
 
 [Timelapse](https://lookout.hackclub.com/api/media/59dbd143-c0c8-46d6-b872-c10b54f619db/video.mp4)
 
