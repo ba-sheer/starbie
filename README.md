@@ -3,16 +3,13 @@ this is my project for week 1 of halflife ysws.my goal is to build a keychain ta
 
 this is the link of half life project page https://halflife.hackclub.com/projects/cmuyamfi1004z01qvesjx09nr
 
+The idea is simple: take care of a tiny digital pet by feeding it, playing with it, and shaking the device to interact with it. An OLED screen displays the pet, while RGB LEDs show its current status.
+
+I'm using a Seeed Studio XIAO ESP32-C3 as the main controller, along with an OLED display, an MPU6050 for motion detection, buttons, and a few other components.
+
 this project is basicly a tamagothchi i am planning to use as my backpacks key chain and It is week 1 of learning the hardware series
 
 fully funded by hackclub
-
-<img width="982" height="531" alt="image" src="https://github.com/user-attachments/assets/3ba23c93-5a16-408c-b6ab-3b3368451368" />
-
-<img width="1077" height="592" alt="Screenshot 2026-10-12 224442" src="https://github.com/user-attachments/assets/6acbe483-669f-43f7-861f-5852875b64e0" />
-<img width="1132" height="647" alt="Screenshot 2026-10-12 224349" src="https://github.com/user-attachments/assets/826b3aea-b0a3-476e-b10b-26d8537f2826" />
-<img width="1270" height="652" alt="Screenshot 2026-10-12 224324" src="https://github.com/user-attachments/assets/6f82455e-3d2d-49c8-989c-d6ba425b9b09" />
-<img width="1050" height="623" alt="Screenshot 2026-10-12 224501" src="https://github.com/user-attachments/assets/c20d8edc-a5fa-4f4c-9874-b131136f5763" />
 
 
 ## Controls
@@ -64,3 +61,10 @@ OLED      0x3C
 MPU6050   0x68
 ```
 thanks to hack club and zach latta
+
+<img width="982" height="531" alt="image" src="https://github.com/user-attachments/assets/3ba23c93-5a16-408c-b6ab-3b3368451368" />
+
+<img width="1077" height="592" alt="Screenshot 2026-10-12 224442" src="https://github.com/user-attachments/assets/6acbe483-669f-43f7-861f-5852875b64e0" />
+<img width="1132" height="647" alt="Screenshot 2026-10-12 224349" src="https://github.com/user-attachments/assets/826b3aea-b0a3-476e-b10b-26d8537f2826" />
+<img width="1270" height="652" alt="Screenshot 2026-10-12 224324" src="https://github.com/user-attachments/assets/6f82455e-3d2d-49c8-989c-d6ba425b9b09" />
+<img width="1050" height="623" alt="Screenshot 2026-10-12 224501" src="https://github.com/user-attachments/assets/c20d8edc-a5fa-4f4c-9874-b131136f5763" />
