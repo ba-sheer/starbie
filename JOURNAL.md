@@ -15,7 +15,7 @@
 ## Contents
 
 1. [2026-10-10: I developed the initial version of Starbie based on my own ideas and vision for the project. This draft establishes the core concept, structure, and direction I want to pursue. While it is still in it](#2026-10-10-i-developed-the-initial-version-of-starbie-based-)
-2. [2026-10-11: added leds and silkscreens for pcb](#2026-10-11-added-leds-and-silkscreens-for-pcb)
+2. [2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha](#2026-10-11-i-developed-the-initial-version-of-starbie-based-)
 3. [2026-10-11: simulated online for testing purpose](#2026-10-11-simulated-online-for-testing-purpose)
 4. [2026-10-11: Added buzzer as my addition of the guide](#2026-10-11-added-buzzer-as-my-addition-of-the-guide)
 5. [2026-10-11: added  readme](#2026-10-11-added-readme)
@@ -35,11 +35,15 @@ I developed the initial version of Starbie based on my own ideas and vision for 
 
 [Timelapse](https://lookout.hackclub.com/api/media/1f2835e0-6eb2-4f1c-8163-17994b66f792/video.mp4)
 
-### 2026-10-11: added leds and silkscreens for pcb
+### 2026-10-11: I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I ha
 
 **0.82h**
 
-added leds and silkscreens for pcb
+I developed the initial version of Starbie based on my own ideas and vision for the project. The current draft establishes the core design and provides a solid foundation for further development. I have also added LEDs and silkscreen markings to the PCB to improve its visual appeal, component identification, and overall usability. These additions help make the board more practical while giving it a cleaner, more polished appearance. I will continue refining the design by following the provided guide and incorporating the recommended improvements. My goal is to maintain the original vision of Starbie while improving its functionality, layout, and build quality. This is an important step toward turning the initial concept into a complete and well-designed project.
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/2fb9bc179fb21088667547c408c7fea6f34dd26399bb2b498c9d484767d3915c.png)
+
+![image](https://halflife.hackclub-assets.com/sessions/xhtMQR6o2RDwXBxuvOuhteY1i4VsW1tR/97b1bd8c57ca37422352331f8a202ca35fcb0a474b41135d7cf03f597f5e27b4.png)
 
 [Timelapse](https://lookout.hackclub.com/api/media/66aaa5e4-1b79-49c4-955e-39e89d15beb2/video.mp4)
 
